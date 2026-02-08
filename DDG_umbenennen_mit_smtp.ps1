@@ -1,7 +1,7 @@
 $oldSmtp = "cld.ddg.wf.alle@dew21.de"
 $newSmtp = "cld.ddg.Wwf.alle@dew21.de"
 
-$g = Get-DynamicDistributionGroup -Identity "CLD.DDG.WF.Alle"
+$g = Get-DynamicDistributionGroup -Identity "DDG-Gruppenname"
 
 # 1) Name/Anzeige/Alias
 Set-DynamicDistributionGroup -Identity $g.Identity `
@@ -16,3 +16,4 @@ Set-DynamicDistributionGroup -Identity "CLD.DDG.WWF.Alle" `
 # 3) alte Adresse als Alias hinzufügen (separater Befehl)
 Set-DynamicDistributionGroup -Identity "CLD.DDG.WWF.Alle" `
   -EmailAddresses @{ Add = "smtp:$oldSmtp" }
+
